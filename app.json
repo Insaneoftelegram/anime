@@ -6,8 +6,8 @@
     "music",
     "music downloader"
   ],
-  "repository": "https://github.com/masterolic/",
-  "website": "https://t.me/Spotify_downloa",
+  "repository": "https://github.com/Insaneoftelegram/Original-download",
+  "website": "https://t.me/resso",
   "success_url": "https://t.me/spotify_downloa_bot",
   "env": {
     "API_ID": {
