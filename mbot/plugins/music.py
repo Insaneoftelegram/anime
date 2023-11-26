@@ -60,10 +60,10 @@ async def song(_, message):
           await message.reply_chat_action(enums.ChatAction.RECORD_AUDIO)
           path = await download_songs(query,randomdir)
           await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
-          await k.edit('uploading...........',
-         reply_markup =InlineKeyboardMarkup (START_BUTTONS))
-                
+          await k.edit('uploading...........')
           await message.reply_audio(path)
+                
+          
           
       
       except IndexError:
@@ -71,7 +71,14 @@ async def song(_, message):
           return  await k.delete()
       except Exception as e:
           await message.reply_text(f"Failed to send song 😥 reason: {e}")
-      START_BUTTONS =[[
+      finally:
+          try:
+              shutil.rmtree(randomdir)
+              await message.reply_text(f"Check out \n @SONGS_WORLDS_OFFICIAL(music)")
+              return await k.delete() 
+          except:
+              pass   
+    START_BUTTONS =[[
     InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="t.me/INSANEX3"),
     InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/RESSO_SUPPORT")
     ]]
