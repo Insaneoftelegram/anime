@@ -32,8 +32,15 @@ from os import execvp,sys
 async def start(client,message):
     reply_markup = [[
         InlineKeyboardButton(
-            text="SUPPORT_GROUP", url="https://t.me/Resso_support"),[
+            text="Bot Channel", url="https://t.me/SONGS_WORLDS_OFFICIAL"),
+        InlineKeyboardButton(
+            text="Repo",
+            url="https://t.me/SONGS_WORLDS_OFFICIAL"),
         InlineKeyboardButton(text="Help",callback_data="helphome")
+        ],
+        [
+            InlineKeyboardButton(text="Donate",
+            url="https://t.me/SONGS_WORLDS_OFFICIAL"),
         ]]
     if LOG_GROUP:
 
