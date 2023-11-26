@@ -6,6 +6,8 @@ from asgiref.sync import sync_to_async
 from pyrogram import filters,enums,Client as Mbot
 from random import randint
 import shutil
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 async def download_songs(query, download_directory='.'):
     query = f"{query} Lyrics".replace(":", "").replace("\"", "")
     ydl_opts = {
@@ -54,22 +56,22 @@ async def song(_, message):
               return await k.delete()
           query = message.text.split(None, 1)[1]
           await k.edit("downloading")
-          print('downloading')
+          print('downloading.......')
           await message.reply_chat_action(enums.ChatAction.RECORD_AUDIO)
           path = await download_songs(query,randomdir)
           await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
-          await k.edit('uploading')
+          await k.edit('uploading...........',
+         reply_markup =InlineKeyboardMarkup (START_BUTTONS))
+                
           await message.reply_audio(path)
+          
       
       except IndexError:
           await message.reply("song requies an argument `eg /song faded`")
           return  await k.delete()
       except Exception as e:
           await message.reply_text(f"Failed to send song 😥 reason: {e}")
-      finally:
-          try:
-              shutil.rmtree(randomdir)
-              await message.reply_text(f"Check out @Resso_song_downloader_bot(music)  @Resso_support(Updates Group)")
-              return await k.delete() 
-          except:
-              pass
+      START_BUTTONS =[[
+    InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="t.me/INSANEX3"),
+    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/RESSO_SUPPORT")
+    ]]
