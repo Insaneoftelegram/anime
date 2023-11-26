@@ -206,6 +206,6 @@ async def search(Mbot: Mbot, query: CallbackQuery):
         try:
             await query.message.reply_text(f"Done✅",   
          reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
-            await query.message.reply_text(f"Check out @spotify_downloa (music)  @spotifynewss(News)")
+            await query.message.reply_text(f"Check out @Resso_song_downloader_bot (music)  @Resso_support(News)")
         except:
             pass     
