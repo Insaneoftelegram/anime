@@ -46,7 +46,7 @@ async def download_songs(query, download_directory='.'):
 async def song(_, message):
     reply_markup = [[
         InlineKeyboardButton(
-            text="SUPPORT_GROUP", url="https://t.me/Resso_support"),[
+            text="SUPPORT_GROUP", url="https://t.me/Resso_support"),
         InlineKeyboardButton(text="Help",callback_data="helphome")
         ]]
       try:
