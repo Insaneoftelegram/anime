@@ -44,6 +44,11 @@ async def download_songs(query, download_directory='.'):
     & filters.text & filters.incoming
 )
 async def song(_, message):
+    reply_markup = [[
+        InlineKeyboardButton(
+            text="SUPPORT_GROUP", url="https://t.me/Resso_support"),[
+        InlineKeyboardButton(text="Help",callback_data="helphome")
+        ]]
       try:
           await message.reply_chat_action(enums.ChatAction.TYPING)
           k = await message.reply("⌛")
