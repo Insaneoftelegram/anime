@@ -32,15 +32,15 @@ from os import execvp,sys
 async def start(client,message):
     reply_markup = [[
         InlineKeyboardButton(
-            text="Bot Channel", url="https://t.me/Spotify_downloa"),
+            text="SUPPORT_GROUP", url="https://t.me/Resso_support"),
         InlineKeyboardButton(
             text="Repo",
-            url="https://github.com/Masterolic/Spotify-Downloader/"),
+            url="https://t.me/INSANEX3"),
         InlineKeyboardButton(text="Help",callback_data="helphome")
         ],
         [
             InlineKeyboardButton(text="Donate",
-            url="https://www.buymeacoffee.com/Masterolic"),
+            url="https://t.me/Resso_support"),
         ]]
     if LOG_GROUP:
 
@@ -84,7 +84,7 @@ async def help(_,message):
         [InlineKeyboardButton(text=i, callback_data=f"help_{i}")] for i in HELP
     ]
     button.append([InlineKeyboardButton(text="back", callback_data=f"backdome")])
-    await message.reply_text(f"Hello **{message.from_user.first_name}**, I'm **@spotify_downloa_bot**.\nI'm Here to download your music.",
+    await message.reply_text(f"Hello **{message.from_user.first_name}**, I'm **@Resso_song_downloader_bot**.\nI'm Here to download your music.",
                         reply_markup=InlineKeyboardMarkup(button))
 
 @Mbot.on_callback_query(filters.regex(r"backdome"))
@@ -93,7 +93,7 @@ async def backdo(_,query):
         [InlineKeyboardButton(text=i, callback_data=f"help_{i}")] for i in HELP
     ]
     button.append([InlineKeyboardButton(text="back", callback_data=f"backdome")])
-    await query.message.edit(f"Hello **{query.message.from_user.first_name}**, I'm **@spotify_downloa_bot**.\nI'm Here to download your music.",
+    await query.message.edit(f"Hello **{query.message.from_user.first_name}**, I'm **@Resso_song_downloader_bot**.\nI'm Here to download your music.",
                         reply_markup=InlineKeyboardMarkup(button))     
     
 @Mbot.on_callback_query(filters.regex(r"help_(.*?)"))
@@ -108,5 +108,5 @@ async def help_home(_,query):
     button = [
         [InlineKeyboardButton(text=i, callback_data=f"help_{i}")] for i in HELP
     ]
-    await query.message.edit(f"Hello **{query.from_user.first_name}**, I'm **@spotify_downloa_bot**.\nI'm Here to download your music.",
+    await query.message.edit(f"Hello **{query.from_user.first_name}**, I'm **@Resso_song_downloader_bot**.\nI'm Here to download your music.",
                         reply_markup=InlineKeyboardMarkup(button))
