@@ -32,15 +32,8 @@ from os import execvp,sys
 async def start(client,message):
     reply_markup = [[
         InlineKeyboardButton(
-            text="SUPPORT_GROUP", url="https://t.me/Resso_support"),
-        InlineKeyboardButton(
-            text="Repo",
-            url="https://t.me/INSANEX3"),
+            text="SUPPORT_GROUP", url="https://t.me/Resso_support"),[
         InlineKeyboardButton(text="Help",callback_data="helphome")
-        ],
-        [
-            InlineKeyboardButton(text="Donate",
-            url="https://t.me/Resso_support"),
         ]]
     if LOG_GROUP:
 
@@ -49,7 +42,10 @@ async def start(client,message):
     if message.chat.type != "private" and message.chat.id not in AUTH_CHATS and message.from_user.id not in SUDO_USERS:
         return await message.reply_text("This Bot Will Not Work In Groups Unless It's Authorized.",
                     reply_markup=InlineKeyboardMarkup(reply_markup))
-    return await message.reply_text(f"Hello {message.from_user.first_name}, I'm a Simple Music Downloader Bot. I Currently Support Download from Youtube.",
+    return await message.reply_text(f"Hello {message.from_user.first_name}, ᴛʜɪs ɪs Resso \n
+ᴀ ᴩᴏᴡᴇʀғᴜʟ ᴍᴜsɪᴄ ᴅᴏᴡɴʟᴏᴀᴅ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.\n
+
+ᴀʟʟ ᴏғ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs ᴀʀᴇ ʟɪsᴛᴇᴅ ɪɴ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ..",
                     reply_markup=InlineKeyboardMarkup(reply_markup))
 
 @Mbot.on_message(filters.command("restart") & filters.chat(OWNER_ID) & filters.private)
