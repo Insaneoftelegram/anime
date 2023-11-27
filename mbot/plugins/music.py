@@ -61,11 +61,11 @@ async def song(_, message):
               return await k.delete()
           query = message.text.split(None, 1)[1]
           await k.edit("downloading")
-          print('downloading.......')
+          print('DOWNLOADING THE SONG !!! .......')
           await message.reply_chat_action(enums.ChatAction.RECORD_AUDIO)
           path = await download_songs(query,randomdir)
           await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
-          await k.edit('uploading...........')
+          await k.edit('Now I'm Uploading 💫')
           await message.reply_audio(path)
           
           
