@@ -29,13 +29,13 @@ from mbot import LOG_GROUP, OWNER_ID, SUDO_USERS, Mbot,AUTH_CHATS
 from os import execvp,sys
 
 @Mbot.on_message(filters.command("start"))
-async def start(client,message):
-    reply_markup = [[
-        InlineKeyboardButton(
-            text="Bot Channel", url="https://t.me/SONGS_WORLDS_OFFICIAL"),
-        InlineKeyboardButton(
-            text="Repo",
-            url="https://t.me/SONGS_WORLDS_OFFICIAL"),
+async def start_cmd(Client, message):
+    await message.reply_photo(
+        photo="https://telegra.ph/file/da545a93169c6e91d4c98.jpg",
+        caption="ʜᴇʏ, \n \n \n ɪ'ᴍ ᴀ ᴛᴇʟᴇɢʀᴀᴍ sᴛʀᴇᴀᴍɪɴɢ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇ. sᴜᴘᴘᴏʀᴛɪɴɢ ᴘʟᴀᴛғᴏʀᴍs ʟɪᴋᴇ ʏᴏᴜᴛᴜʙᴇ,ʀᴇssᴏ....ᴇᴛᴄ \n \n A ᴘᴏᴡᴇғᴜʟ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.\n maintenance work loading..........",
+        reply_markup =InlineKeyboardMarkup (START_BUTTONS)
+  
+    ),
         InlineKeyboardButton(text="Help",callback_data="helphome")
         ],
         [
