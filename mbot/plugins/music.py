@@ -66,7 +66,10 @@ async def song(_, message):
           await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
           await k.edit('uploading...........')
           await message.reply_audio(path)
-          
+          await message.reply_photo(
+        reply_markup =InlineKeyboardMarkup (INSANE_BUTTONS)
+    )       
+         
           
           
       
