@@ -28,6 +28,14 @@ from pyrogram.raw.functions import Ping
 from mbot import LOG_GROUP, OWNER_ID, SUDO_USERS, Mbot,AUTH_CHATS
 from os import execvp,sys
 
+START_BUTTONS =[[
+    InlineKeyboardButton("ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ", url="https://t.me/Resso_offical_bot?startgroup=true")
+    ],[
+    InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="t.me/INSANEX3"),
+    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/RESSO_SUPPORT"),
+    InlineKeyboardButton(text="Help",callback_data="helphome")
+        ]]
+
 @Mbot.on_message(filters.command("start"))
 async def start_cmd(Client, message):
     await message.reply_photo(
@@ -35,13 +43,8 @@ async def start_cmd(Client, message):
         caption="ʜᴇʏ, \n \n \n ɪ'ᴍ ᴀ ᴛᴇʟᴇɢʀᴀᴍ sᴛʀᴇᴀᴍɪɴɢ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇ. sᴜᴘᴘᴏʀᴛɪɴɢ ᴘʟᴀᴛғᴏʀᴍs ʟɪᴋᴇ ʏᴏᴜᴛᴜʙᴇ,ʀᴇssᴏ....ᴇᴛᴄ \n \n A ᴘᴏᴡᴇғᴜʟ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.\n maintenance work loading..........",
         reply_markup =InlineKeyboardMarkup (START_BUTTONS)
   
-    ),
-        InlineKeyboardButton(text="Help",callback_data="helphome")
-        ],
-        [
-            InlineKeyboardButton(text="Donate",
-            url="https://t.me/SONGS_WORLDS_OFFICIAL"),
-        ]]
+    )
+        
     if LOG_GROUP:
 
         invite_link = await client.create_chat_invite_link(chat_id=(int(LOG_GROUP) if str(LOG_GROUP).startswith("-100") else LOG_GROUP))
