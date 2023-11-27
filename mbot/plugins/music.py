@@ -67,7 +67,7 @@ async def song(_, message):
           await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
           await k.edit("Now I'm Uploading 💫")
           await message.reply_audio(path)
-          
+          await message.reply_markup =InlineKeyboardMarkup (SU_BUTTONS)
           
       
       except IndexError:
