@@ -8,6 +8,10 @@ from random import randint
 import shutil
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+INSANE_BUTTONS =[[
+    InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="t.me/INSANEX3"),
+    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/RESSO_SUPPORT")
+    ]]
 async def download_songs(query, download_directory='.'):
     query = f"{query} Lyrics".replace(":", "").replace("\"", "")
     ydl_opts = {
@@ -44,11 +48,6 @@ async def download_songs(query, download_directory='.'):
     & filters.text & filters.incoming
 )
 async def song(_, message):
-    reply_markup = [[
-        InlineKeyboardButton(
-            text="SUPPORT_GROUP", url="https://t.me/Resso_support"),
-        InlineKeyboardButton(text="Help",callback_data="helphome")
-        ]]
       try:
           await message.reply_chat_action(enums.ChatAction.TYPING)
           k = await message.reply("⌛")
@@ -66,8 +65,8 @@ async def song(_, message):
           path = await download_songs(query,randomdir)
           await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
           await k.edit('uploading...........')
-          await message.reply_audio(path)
-                
+          await message.reply_audio(
+          reply_markup =InlineKeyboardMarkup (INSANE_BUTTONS))
           
           
       
@@ -83,7 +82,4 @@ async def song(_, message):
               return await k.delete() 
           except:
               pass   
-    START_BUTTONS =[[
-    InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="t.me/INSANEX3"),
-    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/RESSO_SUPPORT")
-    ]]
+    
