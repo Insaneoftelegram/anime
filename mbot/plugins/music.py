@@ -70,16 +70,6 @@ async def song(_, message):
           await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
           await k.edit("Now I'm Uploading 💫")
           await message.reply_audio(path)
-      try:
-          title = results[0]["title"]
-            thumbnail = results[0]["thumbnails"][0]
-            duration = results[0]["duration"]
-            views = results[0]["views"]
-
-            performer = f"[@Resso_support]" 
-            thumb_name = f'thumb{message.message_id}.jpg'
-            thumb = requests.get(thumbnail, allow_redirects=True)
-            open(thumb_name, 'wb').write(thumb.content)
           
       
       except IndexError:
