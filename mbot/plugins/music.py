@@ -65,8 +65,8 @@ async def song(_, message):
           path = await download_songs(query,randomdir)
           await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
           await k.edit('uploading...........')
-          await message.reply_audio(
-          reply_markup =InlineKeyboardMarkup (INSANE_BUTTONS))
+          await message.reply_audio(path)
+          
           
           
       
@@ -78,7 +78,7 @@ async def song(_, message):
       finally:
           try:
               shutil.rmtree(randomdir)
-              await message.reply_text(f"Check out \n @SONGS_WORLDS_OFFICIAL(music)")
+              await message.reply_text(f"Thank you for your song request!")
               return await k.delete() 
           except:
               pass   
