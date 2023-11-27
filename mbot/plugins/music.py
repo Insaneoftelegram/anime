@@ -65,7 +65,7 @@ async def song(_, message):
           await message.reply_chat_action(enums.ChatAction.RECORD_AUDIO)
           path = await download_songs(query,randomdir)
           await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
-          await k.edit('Now I'm Uploading 💫')
+          await k.edit("Now I'm Uploading 💫")
           await message.reply_audio(path)
           
           
