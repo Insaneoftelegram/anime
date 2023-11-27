@@ -48,12 +48,6 @@ async def download_songs(query, download_directory='.'):
 @Mbot.on_message(
     filters.command('song') 
     & filters.text & filters.incoming
-    await message.reply_photo(
-        photo="https://telegra.ph/file/da545a93169c6e91d4c98.jpg",
-        caption="ʜᴇʏ, \n \n \n ɪ'ᴍ ᴀ ᴛᴇʟᴇɢʀᴀᴍ sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ  ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇ. sᴜᴘᴘᴏʀᴛɪɴɢ ᴘʟᴀᴛғᴏʀᴍs ʟɪᴋᴇ ʏᴏᴜᴛᴜʙᴇ,ʀᴇssᴏ....ᴇᴛᴄ  \n \n A ᴘᴏᴡᴇғᴜʟ ᴍᴜsɪᴄ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.",
-        reply_markup =InlineKeyboardMarkup (SU_BUTTONS)
-  
-    )
 async def song(_, message):
       try:
           await message.reply_chat_action(enums.ChatAction.TYPING)
